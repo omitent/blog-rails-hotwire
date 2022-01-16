@@ -1,0 +1,14 @@
+<%= turbo_frame_tag dom_id post do %>
+  <div class="bg-white w-full p-4 rounded-md mt-2">
+    <h1 class="my-5 text-lg font-bold text-gray-700 text-4xl hover:text-blue-400">
+      <%= link_to post.title, post_path(post), data: { turbo: false } %>
+    </h1>
+    <p class="my-5">
+      <%= post.content %>
+    </p>
+
+    <div class="w-full mt-2 flex flex-wrap border shadow p-2 rounded-md">
+      <p class="flex-1 text-center font-bold text-gray-700">Created at: <%= post.created_at.strftime('%d/%m/%Y') %></p>
+    </div>
+  </div>
+<% end %>
